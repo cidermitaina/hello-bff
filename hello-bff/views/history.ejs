@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>視聴履歴</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" media="all" />
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  </head>
+  <body>
+    <header class="l-header">
+      <div class="l-header__wrap">
+          <div class="l-header__btn-area">
+              <a class="button is-info is-outlined c-user-btn">
+      			<span class="icon">
+      				<i class="fa fa-user"></i>
+      			</span>
+      			<span class="userName"><%= username %></span>
+      		</a>
+          </div>
+      </div>
+    </header>
+    <section class="history">
+        <h1 class="title is-1 history__blockTtl">
+            My Activity
+        </h1>
+        <ul class="history__list">
+            <% histories.forEach(function (history, index) { %>
+                <li class="history__itm">
+                    <a href="<%= history.url %>" class="history__link">
+                        <span class="history__date"><%= history.date %></span>
+                        <p class="history__ttl">
+                            <%= history.title %>
+                        </p>
+                    </a>
+                </li>
+            <% }); %>
+        </ul>
+    </section>
+  </body>
+</html>
